@@ -1,5 +1,13 @@
 {
   "name": "src",
   "version": "0.1.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1",
+    "nodemon": "^3.1.11",
+    "socket.io": "^4.8.1"
+  }
 }
