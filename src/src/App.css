@@ -24,7 +24,7 @@ body {
   flex-direction: column;
 }
 
-/* Header Styles */
+/* Header Styles - Desktop */
 header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -55,6 +55,71 @@ header {
 
 .app-nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Styles - Desktop */
+footer.desktop-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Mobile Footer Navigation */
+@media (max-width: 768px) {
+  /* Hide header on mobile */
+  header {
+    display: none;
+  }
+  
+  /* Mobile footer with oval border */
+  footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Mobile app title in footer */
+  .mobile-app-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  /* Mobile navigation */
+  .mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .mobile-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  /* Adjust main content padding for mobile */
+  main {
+    padding-bottom: 2rem;
+  }
 }
 
 /* Main Content */
@@ -90,14 +155,6 @@ main {
   font-size: 1.1rem;
 }
 
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {

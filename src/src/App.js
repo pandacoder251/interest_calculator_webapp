@@ -34,6 +34,15 @@ function App() {
         </nav>
       </header>
       
+      {/* Mobile Footer Navigation */}
+      <footer>
+        <div className="mobile-app-title">Interest Calculator</div>
+        <nav className="mobile-nav">
+          <a href="/dashboard">Dashboard</a>
+          <a href="/transactions">Transactions</a>
+        </nav>
+      </footer>
+      
       <main>
         <div className="container">
           <Dashboard transactions={transactions} />
@@ -46,7 +55,7 @@ function App() {
         </div>
       </main>
 
-      <footer>
+      <footer className="desktop-footer">
         <p>© 2025 Interest Calculator WebApp</p>
       </footer>
     </div>
