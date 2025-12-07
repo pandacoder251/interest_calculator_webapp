@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import TransactionForm from './components/TransactionForm';
+import TransactionList from './components/TransactionList';
+import Dashboard from './components/Dashboard';
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  // Load transactions from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('transactions');
+    if (saved) {
+      setTransactions(JSON.parse(saved));
+    }
+  }, []);
+
+  // Save transactions to localStorage
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+  }, [transactions]);
+
+  const handleAddTransaction = (transaction) => {
+    setTransactions(prev => [transaction, ...prev]);
+  };
+
   return (
     <div className="app-container">
       <header>
@@ -13,11 +35,14 @@ function App() {
       </header>
       
       <main>
-        <div className="central-content">
-          <div className="primary-section">
-            <h2>Transaction Overview</h2>
-            <p>Monitor your transactions and interest calculations</p>
+        <div className="container">
+          <Dashboard transactions={transactions} />
+          
+          <div className="form-section">
+            <TransactionForm onAddTransaction={handleAddTransaction} />
           </div>
+          
+          <TransactionList transactions={transactions} />
         </div>
       </main>
 
